@@ -1,0 +1,251 @@
+{
+    "capabilities": [
+        {
+            "namespace": "org.eclipse.equinox.p2.iu",
+            "id": "org.mockito.mockito-all",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "osgi.bundle",
+            "id": "org.mockito.mockito-all",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.base",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.stubbing",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.verification.junit",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.misusing",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.invocation",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.runners",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.verification",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.configuration",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.stubbing.answers",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.verification",
+            "version": "1.8.5"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.hamcrest",
+            "version": "1.1.0"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.hamcrest.core",
+            "version": "1.1.0"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.objenesis",
+            "version": "1.0.0"
+        }
+    ],
+    "requirements": [
+        {
+            "namespace": "java.package",
+            "id": "COM.jrockit.reflect",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "jrockit.vm",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "junit.framework",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.apache.tools.ant",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.apache.tools.ant.types",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.hamcrest",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit.internal.runners",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit.runner",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit.runner.manipulation",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit.runner.notification",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit.runners",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.junit.runners.model",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.configuration",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.base",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.misusing",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.verification",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.exceptions.verification.junit",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.invocation",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.runners",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.stubbing",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.stubbing.answers",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.mockito.verification",
+            "range": "[1.8.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.objenesis",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "sun.reflect",
+            "range": "0.0.0",
+            "optional": true
+        }
+    ],
+    "iu": {
+        "id": "org.mockito.mockito-all",
+        "version": "1.8.5",
+        "type": "bundle"
+    },
+    "gav": {
+        "group": "org.mockito",
+        "name": "mockito-all",
+        "version": "1.8.5"
+    },
+    "name": "Mockito Mock Library for Java. Hamcrest-core & Objenesis included in the bundle.",
+    "summary": "An OSGi bundle"
+}

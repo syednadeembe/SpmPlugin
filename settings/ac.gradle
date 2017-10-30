@@ -1,0 +1,26 @@
+/*
+ * Target environments
+ */
+apply plugin: 'bas-ac-cc'
+ccAc {
+	profiles {
+		spm {
+			consolePort = '9987'  // Setting the SPM OSGi console port. Default is 9999
+			httpPort = '8092' // Setting the SPM HTTP port. Default is 8092
+			version = spm.version
+		}
+		cce {
+			consolePort = '9998' // Setting the CCE OSGi console port. Default is 9998
+			httpPort = '8090' // Setting the CCE HTTP port. Default is 8090
+			version = cce.version
+		}
+	}
+}
+
+afterEvaluate {
+    equinoxAc.profileSettings.profiles['SPM'].with {
+      configureProperties "com.softwareag.platform.config.propsloader/com.softwareag.jmx.connector.pid-default.properties", {
+			   setProperty "enabled", "false"
+			}
+    }
+}

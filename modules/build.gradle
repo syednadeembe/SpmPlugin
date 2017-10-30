@@ -1,0 +1,61 @@
+description = 'Product modules'
+/*
+ * Project domain specific configuration
+ */
+subprojects {
+	apply from: "$project.rootDir/settings/osgi.gradle"
+	
+	label = "$project.rootProject.name $project.name module"
+  description = project.label
+	
+	dependencies {
+  	providedCompile(
+  		"com.softwareag.plm.cc:spm-common-feature:$spm.version",
+  		"com.softwareag.plm.spm:spm-core-feature:$spm.version",
+  		"com.softwareag.tps:tps-gf-jackson-core-asl:$tps.version",
+  		"com.softwareag.tps:tps-gf-jackson-mapper-asl:$tps.version",
+  		[ group: 'com.softwareag.ac.equinox', name: 'ac-equinox', version: equinox.version, configuration: equinox.template ],
+  	)
+  }
+	
+	ext.installerProductId = "";
+	
+	jar {
+  	manifest {
+  		instruction 'Export-Package'                        , "*"
+  		instruction 'Import-Package'                        , 'com.softwareag.platform.management.inventory.spi, \
+                                                            com.softwareag.platform.management.configuration.spi, \
+                                                            com.softwareag.platform.management.lifecycleoperations.spi, \
+                                                            com.softwareag.platform.management.instance.spi, \
+                                                            com.softwareag.platform.management.diagnostics.logretrieval, \
+                                                            com.softwareag.platform.management.diagnostics.logretrieval.spi, \
+                                                            com.softwareag.platform.management.monitoring.spi, \
+                                                            com.softwareag.platform.management.core.jmx,\
+                                                            com.softwareag.platform.logging.init;resolution:=optional, \
+                                                            com.webmethods.sc;resolution:=optional, \
+                                                            org.apache.log4j;resolution:=optional, \
+                                                            org.apache.commons.io;resolution:=optional, \
+                                                            com.softwareag.g11n.util;resolution:=optional, \
+                                                            *' 
+  		instruction 'Require-Bundle'						, 'org.junit;bundle-version="4.8.1";resolution:=optional,org.mockito.mockito-all;bundle-version="1.8.5";resolution:=optional'
+  		instruction 'Bundle-ActivationPolicy'               , 'lazy'
+  		instruction 'Service-Component'                     , 'OSGI-INF/*'
+  	}
+  }
+  
+  afterEvaluate {
+    jar {
+    	manifest {
+    		instruction 'PlatformManagementExtension-ProductId' , installerProductId 
+    	}
+    }
+  }
+  
+  afterEvaluate {
+    if(installerProductId == null || installerProductId.isEmpty()) {
+        throw new GradleException("Please provide a value for the installerProductId property.")
+    }
+  }		
+}
+
+evaluationDependsOnChildren();

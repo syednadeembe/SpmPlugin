@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: plm.spm.cloudExtention.feature
+Implementation-Version: 10.2.0.0000-0002
+Implementation-Vendor-Id: com.softwareag
+Created-By: SAG Build Automation System
+Implementation-Vendor: Software AG
+

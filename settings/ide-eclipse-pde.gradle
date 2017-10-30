@@ -1,0 +1,26 @@
+/*
+ * Common configurations for generating Eclipse workspace files for PDE projects
+ */
+apply plugin: 'bas-ide-eclipse-pde'
+project.tasks.eclipse.dependsOn project.tasks.cleanEclipse
+
+project.plugins.withType( JavaPlugin) {
+	// Use Eclipse path variables instead of absolute path's
+	def gradleCache = new File(project.gradle.gradleUserHomeDir.absolutePath, 'caches/artifacts-26/filestore')
+	eclipse {
+		pathVariables 'GRADLE_CACHE': gradleCache
+	}
+	// The PDE workspace expects to find resources directly under the project directory ... copying them there
+	eclipsePde {
+		bundleRootPath = null
+	}
+	// We trust bnd ... Disabling PDE 'Access restriction' errors/warnings
+	eclipse.classpath.file.withXml { provider ->
+    	provider.asNode().find { it.@path == 'org.eclipse.pde.core.requiredPlugins' }.appendNode('accessrules').appendNode('accessrule', ['kind':'accessible', 'pattern':'**'])
+	}
+	
+	task beforeEclipsePde << {
+	   sourceSets.main.output.classesDir.mkdirs()
+  }
+  tasks.eclipsePde.dependsOn tasks.beforeEclipsePde
+}

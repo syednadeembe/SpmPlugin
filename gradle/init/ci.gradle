@@ -1,0 +1,9 @@
+def taskList                             = ['build', 'integrationTest']
+def finalTaskList                        = startParameter.taskNames - taskList + taskList - ['clean']
+finalTaskList                            = startParameter.taskNames.contains('clean') ? ['clean'] + finalTaskList : finalTaskList
+startParameter.taskNames                 = finalTaskList
+startParameter.continueOnFailure         = true
+startParameter.showStacktrace            = org.gradle.api.logging.configuration.ShowStacktrace.INTERNAL_EXCEPTIONS
+logger.lifecycle                         "Executing task sequence....$startParameter.taskNames"
+logger.lifecycle                         "Using project properties...$startParameter.projectProperties"
+logger.lifecycle                         "Using system properties....$startParameter.systemPropertiesArgs"

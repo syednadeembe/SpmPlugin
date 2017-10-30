@@ -1,0 +1,50 @@
+description = 'Inter-module level integration tests'
+/*
+ * Project domain specific configuration
+ */
+subprojects {
+	apply from: "$project.rootDir/settings/java-base.gradle"
+  apply from: "$project.rootDir/settings/ide-eclipse-pde.gradle"	
+	apply plugin: 'bas-ac-spm-test' // Add tasks equinoxAcInstallTestsSPM and equinoxAcTestSPM
+  
+  label = "$project.name Integration Tests"
+  description = project.label
+	
+	ext.productionModuleName = project.name.replace('-test', '') // Convention: production module has the same name as the iTest module.
+	ext.productionFeatureName = productionModuleName.replace('-impl','') // Convention: production feature has the same name as the production module but without the -impl suffix.
+	
+	Project productionModule = project(":modules:$productionModuleName")
+	Project productionFeature = project(":features:$productionFeatureName")
+	
+  equinoxAcInstallTestsSPM { 
+		dependsOn "$productionFeature.path:equinoxAcInstallSPM" // Define dependency to the task responsible for the SPM plugin feature provisioning
+	}
+	project.afterEvaluate { 
+		jarIntegTest.manifest.instruction('Fragment-Host', productionModule.jar.manifest.symbolicName) // Give your integration test artifact access to the main artifact
+		equinoxAcTestSPM.jvmArgs = ["-Dspm.common.plugins.product.id=" + productionModule.installerProductId]
+	}	
+	equinoxAcInstallTestsCCE.enabled = false
+	equinoxAcTestCCE.enabled = false
+	
+  jarIntegTest {
+    manifest {
+      instruction 'Export-Package', ''
+    }
+  }
+	
+	dependencies {
+		providedIntegTestCompile (
+		    project.modules.junit,
+		    project(path: productionModule.path, configuration: 'compile'),
+		    project(path: productionModule.path, configuration: 'providedCompile'),
+    )
+	}
+	
+	tasks.eclipse.doLast {
+    copy {
+      from new File(buildDir, 'tmp/bundle/META-INF')
+      into new File(projectDir, 'META-INF')
+    }
+  }
+	
+}

@@ -1,0 +1,55 @@
+description = 'Software AG SPM plugins'
+/*
+ * Root-project only configuration
+ */
+apply from: 'settings/dependencies.gradle'
+apply from: 'settings/groups.gradle'
+apply from: 'settings/ac.gradle'
+apply from: 'settings/ide-eclipse.gradle'
+/*
+ * Common configuration for all projects
+ */
+allprojects {
+	defaultTasks 'build'
+	apply plugin: 'project-report'
+}
+/* 
+ * Build requirements
+ */
+buildscript {
+	ext {
+		bas = [
+			version : 'latest.milestone',
+		]
+		spm = [
+      version : 'latest.milestone',
+    ]
+    cce = [
+      version : 'latest.milestone',
+    ]
+    tps = [
+      version: 'latest.milestone',
+    ]
+    equinox = [
+      version: 'latest.milestone',
+      template: 'core'
+    ]
+	}
+	dependencies {
+		classpath (
+      "com.softwareag.bas:bas-plugins-ide:$bas.version",                     
+			"com.softwareag.bas:bas-plugins-cc:$bas.version",
+			"com.softwareag.bas:bas-plugins-coins:$bas.version",
+			"com.softwareag.bas:bas-plugins-l10n:$bas.version",
+			"com.softwareag.bas:bas-plugins-fix:$bas.version",
+		)
+	}
+}
+
+evaluationDependsOnChildren()
+spmAc.installerProductIds = ['integrationServer'] // IS Plugin is provisioned in SPM profile OOB. 
+def modulesProject = subprojects.find { project -> project.name == 'modules' }
+modulesProject.subprojects.each {
+  spmAc.installerProductIds += it.installerProductId
+}
+

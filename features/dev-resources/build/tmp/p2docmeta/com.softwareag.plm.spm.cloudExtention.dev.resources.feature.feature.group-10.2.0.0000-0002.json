@@ -1,0 +1,29 @@
+{
+    "capabilities": [
+        {
+            "namespace": "org.eclipse.equinox.p2.iu",
+            "id": "com.softwareag.plm.spm.cloudExtention.dev.resources.feature.feature.group",
+            "version": "10.2.0.0000-0002"
+        }
+    ],
+    "requirements": [
+        {
+            "namespace": "org.eclipse.equinox.p2.iu",
+            "id": "org.mockito.mockito-all",
+            "range": "[1.8.5,1.8.5]"
+        }
+    ],
+    "iu": {
+        "id": "com.softwareag.plm.spm.cloudExtention.dev.resources.feature.feature.group",
+        "version": "10.2.0.0000-0002",
+        "type": "feature"
+    },
+    "gav": {
+        "group": "com.softwareag.plm.spm.cloudExtention",
+        "name": "cloudExtention-dev-resources",
+        "version": "10.2.0-v0002"
+    },
+    "name": "Development Resources feature, not used in production",
+    "summary": "Development Resources feature, not used in production",
+    "description": null
+}

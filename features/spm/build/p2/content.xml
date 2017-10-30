@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadataRepository version='1.1.0'?>
+<repository name='spm-cloudExtention' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1508311458568'/>
+    <property name='p2.compressed' value='false'/>
+  </properties>
+  <units size='3'>
+    <unit id='com.softwareag.plm.spm.cloudExtention.feature.feature.group' version='10.2.0.0000-0002' singleton='false'>
+      <update id='com.softwareag.plm.spm.cloudExtention.feature.feature.group' range='[0.0.0,10.2.0.0000-0002)' severity='0'/>
+      <properties size='10'>
+        <property name='org.eclipse.equinox.p2.name' value='%featureName'/>
+        <property name='org.eclipse.equinox.p2.description' value='%description'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='%descriptionURL'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+        <property name='df_LT.license' value='For Software AG Legal Notices please refer to: http://softwareag.com/licenses and/or in the root installation directory of the licensed product(s).'/>
+        <property name='df_LT.copyright' value='Copyright &amp;copy; 2006 - 2016 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors. The name Software AG and all Software AG product names are either trademarks or registered trademarks of Software AG and/or Software AG USA Inc. and/or its subsidiaries and/or its affiliates and/or their licensors. Other company and product names mentioned herein may be trademarks of their respective owners. Detailed information on trademarks and patents owned by Software AG and/or its subsidiaries is located at {http://softwareag.com/licenses}. This software may include portions of third-party products. For third-party copyright notices, license terms, additional rights or restrictions, please refer to &quot;License Texts, Copyright Notices and Disclaimers of Third Party Products&quot;. For certain specific third-party license restrictions, please refer to section E of the Legal Notices available under &quot;License Terms and Conditions for Use of Software AG Products / Copyright and Trademark Notices of Software AG Products&quot;. These documents are part of the product documentation, located at {http://softwareag.com/licenses} and/or in the root installation directory of the licensed product(s). Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.'/>
+        <property name='df_LT.featureName' value='&apos;Software AG SPM plugins&apos; feature for spm-cloudExtention'/>
+        <property name='df_LT.description' value='&apos;Software AG SPM plugins&apos; feature for spm-cloudExtention'/>
+        <property name='df_LT.providerName' value='Software AG'/>
+      </properties>
+      <provides size='2'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.softwareag.plm.spm.cloudExtention.feature.feature.group' version='10.2.0.0000-0002'/>
+        <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+      </provides>
+      <requires size='2'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.softwareag.plm.spm.cloudExtention.impl' range='[10.2.0.0000-0002,10.2.0.0000-0002]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='com.softwareag.plm.spm.cloudExtention.feature.feature.jar' range='[10.2.0.0000-0002,10.2.0.0000-0002]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='%25licenseURL' url='%25licenseURL'>
+          %license
+        </license>
+      </licenses>
+      <copyright uri='%25copyrightURL' url='%25copyrightURL'>
+        %copyright
+      </copyright>
+    </unit>
+    <unit id='com.softwareag.plm.spm.cloudExtention.feature.feature.jar' version='10.2.0.0000-0002'>
+      <properties size='9'>
+        <property name='org.eclipse.equinox.p2.name' value='%featureName'/>
+        <property name='org.eclipse.equinox.p2.description' value='%description'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='%descriptionURL'/>
+        <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
+        <property name='df_LT.license' value='For Software AG Legal Notices please refer to: http://softwareag.com/licenses and/or in the root installation directory of the licensed product(s).'/>
+        <property name='df_LT.copyright' value='Copyright &amp;copy; 2006 - 2016 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors. The name Software AG and all Software AG product names are either trademarks or registered trademarks of Software AG and/or Software AG USA Inc. and/or its subsidiaries and/or its affiliates and/or their licensors. Other company and product names mentioned herein may be trademarks of their respective owners. Detailed information on trademarks and patents owned by Software AG and/or its subsidiaries is located at {http://softwareag.com/licenses}. This software may include portions of third-party products. For third-party copyright notices, license terms, additional rights or restrictions, please refer to &quot;License Texts, Copyright Notices and Disclaimers of Third Party Products&quot;. For certain specific third-party license restrictions, please refer to section E of the Legal Notices available under &quot;License Terms and Conditions for Use of Software AG Products / Copyright and Trademark Notices of Software AG Products&quot;. These documents are part of the product documentation, located at {http://softwareag.com/licenses} and/or in the root installation directory of the licensed product(s). Use, reproduction, transfer, publication or disclosure is prohibited except as specifically provided for in your License Agreement with Software AG.'/>
+        <property name='df_LT.featureName' value='&apos;Software AG SPM plugins&apos; feature for spm-cloudExtention'/>
+        <property name='df_LT.description' value='&apos;Software AG SPM plugins&apos; feature for spm-cloudExtention'/>
+        <property name='df_LT.providerName' value='Software AG'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.softwareag.plm.spm.cloudExtention.feature.feature.jar' version='10.2.0.0000-0002'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='com.softwareag.plm.spm.cloudExtention.feature' version='10.2.0.0000-0002'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='com.softwareag.plm.spm.cloudExtention.feature' version='10.2.0.0000-0002'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='%25licenseURL' url='%25licenseURL'>
+          %license
+        </license>
+      </licenses>
+      <copyright uri='%25copyrightURL' url='%25copyrightURL'>
+        %copyright
+      </copyright>
+    </unit>
+    <unit id='com.softwareag.plm.spm.cloudExtention.impl' version='10.2.0.0000-0002' singleton='false'>
+      <update id='com.softwareag.plm.spm.cloudExtention.impl' range='[0.0.0,10.2.0.0000-0002)' severity='0'/>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='cloudExtention spm-cloudExtention-impl module'/>
+        <property name='org.eclipse.equinox.p2.description' value='cloudExtention spm-cloudExtention-impl module'/>
+        <property name='org.eclipse.equinox.p2.provider' value='Software AG'/>
+        <property name='org.eclipse.equinox.p2.doc.url' value='http://www.softwareag.com'/>
+      </properties>
+      <provides size='4'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='com.softwareag.plm.spm.cloudExtention.impl' version='10.2.0.0000-0002'/>
+        <provided namespace='osgi.bundle' name='com.softwareag.plm.spm.cloudExtention.impl' version='10.2.0.0000-0002'/>
+        <provided namespace='java.package' name='com.softwareag.platform.management.productcode' version='10.1.0'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      </provides>
+      <requires size='15'>
+        <required namespace='osgi.bundle' name='org.junit' range='4.8.1' optional='true'/>
+        <required namespace='osgi.bundle' name='org.mockito.mockito-all' range='1.8.5' optional='true'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.inventory.spi' range='[1.1.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.configuration.spi' range='[1.0.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.lifecycleoperations.spi' range='[1.0.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.instance.spi' range='[1.0.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.diagnostics.logretrieval' range='[1.1.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.diagnostics.logretrieval.spi' range='[1.1.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.monitoring.spi' range='[1.0.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.management.core.jmx' range='[1.0.0,2.0.0)'/>
+        <required namespace='java.package' name='com.softwareag.platform.logging.init' range='[0.0.0,1.0.0)' optional='true'/>
+        <required namespace='java.package' name='com.webmethods.sc' range='[10.0.0,11.0.0)' optional='true'/>
+        <required namespace='java.package' name='org.apache.log4j' range='[1.2.0,2.0.0)' optional='true'/>
+        <required namespace='java.package' name='org.apache.commons.io' range='0.0.0' optional='true'/>
+        <required namespace='java.package' name='com.softwareag.g11n.util' range='[10.1.0,11.0.0)' optional='true'/>
+      </requires>
+      <artifacts size='1'>
+        <artifact classifier='osgi.bundle' id='com.softwareag.plm.spm.cloudExtention.impl' version='10.2.0.0000-0002'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='manifest'>
+            Bundle-SymbolicName: com.softwareag.plm.spm.cloudExtention.impl&#xA;Bundle-Version: 10.2.0.0000-0002&#xA;
+          </instruction>
+        </instructions>
+      </touchpointData>
+    </unit>
+  </units>
+</repository>

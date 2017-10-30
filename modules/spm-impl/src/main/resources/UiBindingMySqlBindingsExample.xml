@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding>	
+	<groupDef name="ControlsDemo">
+	    <!-- Typical TextBox control 
+	              - bound to #{Name} ServerSide binding
+	              - defaultValue is set to demoValue - This property is available for all the GCUI controls 
+	    -->
+		<property name="textBoxControl" value="#{Name}" label="TextBox Control" required="true" type="TextBox" defaultValue="demoValue"/>		
+		
+		
+	
+	    <!-- RadioButtonGroup control 
+	              - bound to #{Enabled} ServerSide binding
+	              - defaultValue is true
+	              - the items allowed for selection:
+	                   - itemYes
+	                   - itemNo  
+	    -->
+		<property name="radioButtonGroupControl" value="#{Enabled}" label="RadioButtonGroup control" type="RadioButtonGroup" defaultValue="true">
+			<selectItems>
+				<selectItem value="true" name="itemYes" label="Yes" />
+				<selectItem value="false" name="itemNo"  label="No"/>
+			</selectItems>	
+		</property>
+
+	    <!-- CheckBox control 
+	              - bound to #{CheckBoxBooleanBinding} ServerSide binding
+	              - items used for selection: true/false
+	    -->
+		<property name="checkBox" value="#{CheckBoxBooleanBinding}" label="CheckBox Control" type="CheckBox" />
+		
+		
+		<!-- Typical TextArea control 
+	              - bound to #{Description} ServerSide binding
+	    -->		
+		<property name="textAreaControl" value="#{Description}" label="TextArea control" type="TextArea" />	
+		
+		
+		<!-- SingleLine NotEditable TextArea control 
+	              - bound to #{SingleLineDescription} ServerSide binding
+	              - bound to cssClass: metawidget-single-line-no-border-textarea 
+	    -->		
+		<property name="singleLineTextAreaControl" value="#{SingleLineDescription}" label="Single Line TextArea" enabled="Never" type="TextArea" cssClass="metawidget-single-line-no-border-textarea" defaultValue="Single Line default hint value for: http://namespaces.softwareag.com/DEMO/Booth"/>
+		
+		
+		<!-- Typical DropDown control 
+	              - bound to #{StringBinding} ServerSide binding
+	              - allows static items selection
+	              - allows dynamic items selection
+	              - defaultValue is set to staticSelection
+	    -->		
+		<property name="dropDownControl" value="#{StringBinding}" label="DropDown Control" type="DropDown" typeAhead="true" defaultValue="staticSelection"  >
+			<selectItems>
+				<selectItem value="" label="Empty Selection"/>
+				<selectItem value="staticSelection" label="Static Selection"/>
+				
+				<!-- dynamic list of configurations -->
+				<selectList dynamic="true" type="configuration/instances" configurationTypeId="MySql" />
+			</selectItems>		
+		</property>	
+
+		<!-- Table control 
+	              - bound to #{Properties.Property} Key/Value pair Collection ServerSide binding
+	              - the actions in the table
+	                   - addItem - enables Add to the table functionality              
+	                   - deleteItem - enables Delete from the table functionality              
+	              - the columns in the table:
+	                   - @demoCheckBoxName - CheckBox control binding
+					   - @name - Attribute(key) binding 
+	                   - $ - Value binding  
+	    -->				
+		<property name="PropertiesTableControl" value="#{Properties.Property}" label="Table Control - key/value pairs" type="Table">
+			<createAction name="addItem" label="Add Item" />
+			<deleteAction name="deleteItem" label="Delete Item" />
+
+			<column value="@demoCheckBoxName" label="On" type="CheckBox" width="40"/>
+			<column value="@name" label="Attribute(key)" type="TextBox" width="140"/>			
+			<column value="$" label="Value" type="TextBox" width="100"/>
+		</property>			
+			<property name="testBox" value="#{TestName}" label="Test control"  type="TextBox" defaultValue="testBox"/>
+	</groupDef>
+	
+	<configurationInstancesView >
+		<createAction label="Create" >
+			<actionParameter name="Default" configurationDataViewName="DefaultView" label="Default item" />
+		</createAction>		
+		<deleteAction label="Delete" />	
+	
+		<column value="#{Enabled}" label="Lookup-label&amp;icon&amp;action" width="35" configurationDataView="enabled">
+			<lookupValues>
+				<lookupValue value="true" label="Enabled" icon="enabled.png" />
+				<lookupValue value="false" label="Disabled" icon="disabled.png" />
+			</lookupValues>
+		</column>
+		
+		<column value="#{Enabled}" label="Lookup-icon" width="20">
+			<lookupValues>
+				<lookupValue value="true" icon="enabled.png" />
+				<lookupValue value="false" icon="disabled.png" />
+			</lookupValues>
+		</column>
+
+		<column value="#{Enabled}" label="Lookup-label" width="20">
+			<lookupValues>
+				<lookupValue value="true" label="Yes" />
+				<lookupValue value="false" label="No" />
+			</lookupValues>
+		</column>		
+	
+		<column value="#{Name}" label="Name" configurationDataView="enabled" />		
+		<column value="#{Description}" label="Description"/>
+	</configurationInstancesView>	
+
+	<configurationDataView name="DefaultLabelView" columnValue="#{Name}" value="TestConfigurationDataDefaultLabel">
+		<editAction label="Edit Action" />		
+	    
+		<group name="GeneralInfo" groupRef="ControlsDemo" label="GCUI Controls - demo" />
+	</configurationDataView>
+	
+	<configurationDataView name="DefaultView" label="SDKs Configuration" columnValue="#{Name}" value="*">
+		<editAction label="Edit Action" />		
+	    
+		<group name="GeneralInfo" groupRef="ControlsDemo" label="GCUI Controls - demo" />
+	</configurationDataView>	
+	
+</uiBinding>

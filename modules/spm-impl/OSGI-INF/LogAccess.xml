@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.softwareag.plm.spm.nirvana.logretrieval">
+   <implementation class="com.softwareag.platform.management.diagnostics.logretrieval.DefaultLogAccess"/>
+   <service>
+      <provide interface="com.softwareag.platform.management.diagnostics.logretrieval.spi.LogAccessProvider"/>
+   </service>
+   <property name="productId" type="String" value="cloudExtention"/>
+   <property name="runtimeComponentId" type="String" value="cloudExtention-*"/>
+   <property name="instanceNameRegex" type="String" value="cloudExtention-(.*)"/>
+   <property name="logDirs" type="String" value="/logs"/>  
+   <property name="includes" type="String" value="*.log"/>
+</scr:component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding>	
+	<groupDef name="ControlsDemo">		
+		<property name="textBox" value="#{Name}" label="On Edit TextBox Control" required="OnEdit" type="TextBox" defaultValue="DemoValue" tooltip="Please enter a valid name "/>
+	  	<property name="CheckBoxGroupControlAdvanced" value="#{Enabled}" label="Enable DulListBox control" type="CheckBox" defaultValue="true" tooltip="Enbale the Dual list box"/>
+	  	<property name="DualListBoxControl with CSV" value="#{StringBinding}" label="DuallistBox Control- CSV output" type="DualListBox" valueFormat="csv" enabled="OnCondition" tooltip="Please select \n an element from the dual list box" enabledCondition="CheckBoxGroupControlAdvanced.value =='true'">
+			<selectItems>				
+				<selectItem value="staticSelection0" label="Static Selection0"/>
+				<selectItem value="staticSelection1" label="Static Selection1"/>
+				<selectItem value="staticSelection2" label="Static Selection2"/>
+				<selectItem value="staticSelection3" label="Static Selection3"/>
+				<selectList dynamic="true" type="configuration/instances" configurationTypeId="ADVANCED-UIBINDING-DEMOS-JSON" />								    
+			</selectItems>		
+		</property>
+		
+		<!-- Typical fileUpload control: using a concrete file name
+		-->	
+		<property name="configFileSingletonControl" value="#{ConfigFileSingleton}" label="Singleton config file" type="FileUpload" serverFileLocation="tempDemo/singleconfig.xml" tooltip="Provide full path to singleton configuration file"/>  
+		
+	</groupDef>
+
+	<configurationDataView name="DefaultView" instructionText="SDKs Advanced Configuration demo cases instructions." columnValue="#{Name}" value="*">
+		<editAction label="Edit Action" />		
+		<group name="GeneralInfo" groupRef="ControlsDemo" label="GCUI Controls ,- Singleton demo" />
+	</configurationDataView>	
+	
+	<singletonConfigurationInstancesView forceConfigurationDataRefresh="true" />
+	
+</uiBinding>

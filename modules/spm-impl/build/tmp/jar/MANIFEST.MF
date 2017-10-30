@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-Description: cloudExtention spm-cloudExtention-impl module
+Bundle-SymbolicName: com.softwareag.plm.spm.cloudExtention.impl
+Implementation-Version: 10.2.0.0000-0002
+Require-Bundle: org.junit;bundle-version="4.8.1";resolution:=optional,
+ org.mockito.mockito-all;bundle-version="1.8.5";resolution:=optional
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software AG
+Bundle-DocURL: http://www.softwareag.com
+Import-Package: com.softwareag.platform.management.inventory.spi;versi
+ on="[1.1,2)",com.softwareag.platform.management.configuration.spi;ver
+ sion="[1.0,2)",com.softwareag.platform.management.lifecycleoperations
+ .spi;version="[1.0,2)",com.softwareag.platform.management.instance.sp
+ i;version="[1.0,2)",com.softwareag.platform.management.diagnostics.lo
+ gretrieval;version="[1.1,2)",com.softwareag.platform.management.diagn
+ ostics.logretrieval.spi;version="[1.1,2)",com.softwareag.platform.man
+ agement.monitoring.spi;version="[1.0,2)",com.softwareag.platform.mana
+ gement.core.jmx;version="[1.0,2)",com.softwareag.platform.logging.ini
+ t;resolution:=optional;version="[0.0,1)",com.webmethods.sc;resolution
+ :=optional;version="[10.0,11)",org.apache.log4j;resolution:=optional;
+ version="[1.2,2)",org.apache.commons.io;resolution:=optional,com.soft
+ wareag.g11n.util;resolution:=optional;version="[10.1,11)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Service-Component: OSGI-INF/*
+PlatformManagementExtension-ProductId: cloudExtention
+Export-Package: com.softwareag.platform.management.productcode;version
+ ="10.1.0"
+Bundle-Version: 10.2.0.0000-0002
+Bundle-Name: cloudExtention spm-cloudExtention-impl module
+Created-By: SAG Build Automation System
+

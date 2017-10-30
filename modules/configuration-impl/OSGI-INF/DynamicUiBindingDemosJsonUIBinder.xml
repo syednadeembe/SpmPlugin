@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.softwareag.platform.management.sdk.democases.configuration.uibinder.dynamic.json">
+   <implementation class="com.softwareag.platform.management.sdk.democases.configuration.uibinder.DynamicUiBindingDemosJsonUiBinder"/>
+   <property name="runtimeComponentId" type="String" value="*"/>
+   <property name="configurationTypeId" type="String" value="DYNAMIC-UIBINDING-DEMOS-JSON"/>
+   <service>
+      <provide interface="com.softwareag.platform.management.configuration.uibinding.spi.ConfigurationUiBinder"/>
+   </service>
+</scr:component>

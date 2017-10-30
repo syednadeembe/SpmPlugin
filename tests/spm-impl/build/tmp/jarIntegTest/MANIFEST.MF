@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-Description: Integration tests for spm-cloudExtention-impl-test
+  Integration Tests
+Bundle-SymbolicName: com.softwareag.plm.spm.cloudExtention.impl.test.t
+ est
+Bundle-Name: spm-cloudExtention-impl-test Integration Tests Test
+Bundle-Version: 10.2.0.0000-0002
+Bundle-ManifestVersion: 2
+Private-Package: com.softwareag.platform.management.productcode
+Bundle-Vendor: Software AG
+Import-Package: com.softwareag.platform.management.common.exceptions;v
+ ersion="[1.0,2)",com.softwareag.platform.management.inventory.spi;ver
+ sion="[1.1,2)",org.junit;version="[4.8,5)",org.osgi.framework;version
+ ="[1.5,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Fragment-Host: com.softwareag.plm.spm.cloudExtention.impl
+Created-By: SAG Build Automation System
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.softwareag.platform.management.sdk.democases.configuration.impl.advanced.manager">
+   <implementation class="com.softwareag.platform.management.sdk.democases.configuration.impl.AdvancedUiBindingDemosJsonBindingsManager"/>
+   <service>
+      <provide interface="com.softwareag.platform.management.configuration.spi.ConfigurationManager"/>
+   </service>
+   <property name="productId" type="String" value="*"/>
+   <property name="runtimeComponentId" type="String" value="CC-SDKs-engine"/>
+   <property name="configurationTypeId" type="String" value="ADVANCED-UIBINDING-DEMOS-JSON"/>
+</scr:component>

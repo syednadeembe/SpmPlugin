@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>COINS PMD Density Chart: SPM-Plugins 10.2.0-v0002 (Source: 10.2.0, Build: 2) spm-cloudExtention-impl-main</title>
+<style type='text/css'>
+    body { margin-left: 2%; margin-right: 2%; font:normal; font-family:verdana,arial,helvetica,sans-serif; color:#000000; }
+    
+    table.intro tr th { font-weight: bold; background:#eeeee0; }
+    tr.intro { font-weight: bold; font-size: 18px; }
+    th.intro { font-weight: bold; font-size: 18px; }
+    
+    table.summary tr th { font-weight: bold; font-size: 16px; text-align:center; background:#a6caf0; }
+    table.summary tr td {                    font-size: 16px; text-align:center; background:#eeeee0; }
+    
+    table.footer tr td { font-size: 12px; color:#000000; }
+    
+    .high-value   { background:#ff9999; }
+    .medium-value { background:#ffcc66; }
+    .low-value    { background:#99ff99; }
+    
+    .reportTitle  { font-weight: bold; font-size: 26px;}
+    .notes        { font-size: 12px;}
+</style>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = new google.visualization.DataTable();
+data.addColumn('string','Date');
+data.addColumn('number','Density');
+data.addRows([
+['18/10', 0]
+]);
+var options = {
+chartArea: {left: '50'},
+};
+var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+</script>
+</head>
+<body>
+<table border="0" width="100%">
+<tr>
+<td width="80%" align="left"><div class="reportTitle">COINS PMD Density Chart</div></td>
+<td width="20%" align="right"><img src="./sag-coins-logo-small.gif" alt="SAG COINS logo"/></td>
+</tr>
+</table>
+<table border="0" cellpadding="2" cellspacing="3" width="100%" class="intro">
+<tr class="intro">
+<th width="10%" align="left">Product:</th>
+<th width="90%" align="left">SPM-Plugins 10.2.0-v0002</th>
+</tr>
+<tr class="intro">
+<th width="10%" align="left">Source:</th>
+<th width="90%" align="left">10.2.0 build 2</th>
+</tr>
+<tr class="intro">
+ <th width="10%" align="left">Module:</th>
+ <th width="90%" align="left">spm-cloudExtention-impl-main</th>
+</tr>
+
+</table>
+<br/><div id="chart_div" style="width: 800px; height: 400px;"></div>
+<h3>Explanation</h3>
+<div class="notes">
+<p><b>Density</b> is the number of rule violations per 1000 lines of code.</p>
+</div>
+<div class="notes">
+<p>See the page <a href="https://iwiki.eur.ad.sag/display/SHRPROD/Java+Programming">Java Programming</a> for help in dealing with the issues highlighted by <a href="http://pmd.sourceforge.net/">PMD</a>.</p>
+<p>Please direct any comments or questions to <a href="mailto:RnD-wM-COINS@softwareag.com">RnD-wM-COINS@softwareag.com</a>.</p>
+<p>Please raise COINS related iTrac issues using <a href="https://itrac.eur.ad.sag/browse/CTO">iTrac</a>.</p>
+<p>Generated on 2017-10-18 07:24:56 by <a href="https://iwiki.eur.ad.sag/display/RNDPO/COINS">COINS</a> version 5.0.0-v0114.</p>
+</div>
+<table border="0" cellspacing="2" cellpadding="0" width="100%" class="footer">
+<tr>
+<td align="right">Copyright &copy; 2008-2011 <a href="http://www.softwareag.com">Software AG</a></td>
+</tr>
+</table>
+</body>
+</html>

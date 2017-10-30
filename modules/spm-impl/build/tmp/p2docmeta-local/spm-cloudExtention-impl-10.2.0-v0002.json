@@ -1,0 +1,9 @@
+{
+    "iu": {
+        "type": "bundle",
+        "id": "com.softwareag.plm.spm.cloudExtention.impl",
+        "version": "10.2.0.0000-0002"
+    },
+    "name": "cloudExtention spm-cloudExtention-impl module",
+    "summary": "cloudExtention spm-cloudExtention-impl module"
+}

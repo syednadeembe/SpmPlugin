@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.softwareag.platform.management.productcode.test.ExampleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-10-18T07:24:24" hostname="MCMOSY01" time="0.003">
+  <properties/>
+  <testcase name="testExample" classname="com.softwareag.platform.management.productcode.test.ExampleTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

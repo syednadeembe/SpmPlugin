@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding>   
+       <groupDef name="ControlsDemo">
+              <property name="serviceName" value="#{ServiceName}" label="Service Name" required="true" type="TextBox" defaultValue="MySQL"/>           
+              <property name="port" value="#{Port}" label="Port" required="true" type="TextBox" defaultValue=""/>          
+              <property name="rootPassword" value="#{RootPassword}" label="Root Password" required="true" type="TextBox" defaultValue=""/>
+
+              <property name="addBinToPath" value="#{Enabled}" label="Add Bin To Path" type="RadioButtonGroup" defaultValue="true">
+                     <selectItems>
+                           <selectItem value="true" name="itemYes" label="Yes" />
+                           <selectItem value="false" name="itemNo"  label="No"/>
+                     </selectItems>       
+              </property>
+
+              <property name="serverType" value="#{ServerType}" label="Server Type" type="DropDown" typeAhead="true" defaultValue="SERVER"  >
+                     <selectItems>
+                           <selectItem value="SERVER" label="SERVER"/>
+                           <selectItem value="DEVELOPMENT" label="DEVELOPMENT"/>
+                           <selectItem value="DEDICATED" label="DEDICATED"/>
+                           <!-- dynamic list of configurations -->
+                           <selectList dynamic="true" type="configuration/instances" configurationTypeId="UIBINDING-DEMOS-JSON" />
+                     </selectItems>             
+              </property>   
+
+              <property name="databaseType" value="#{DatabaseType}" label="Database Type" type="DropDown" typeAhead="true" defaultValue="INNODB"  >
+                     <selectItems>
+                           <selectItem value="INNODB" label="INNODB"/>
+                           <selectItem value="MIXED" label="SERVER"/>                           
+                           <selectItem value="MYISAM" label="MYISAM"/>
+                           <!-- dynamic list of configurations -->
+                           <selectList dynamic="true" type="configuration/instances" configurationTypeId="UIBINDING-DEMOS-JSON" />
+                     </selectItems>             
+              </property>                
+       </groupDef>
+       
+       <configurationInstancesView >
+              <createAction label="Create" >
+                     <actionParameter name="Default" configurationDataViewName="DefaultView" label="Default item" />
+              </createAction>            
+              <deleteAction label="Delete" />   
+
+              <column value="#{Enabled}" label="Add Bin To Path" width="20">
+                     <lookupValues>
+                           <lookupValue value="true" label="Yes" />
+                           <lookupValue value="false" label="No" />
+                     </lookupValues>
+              </column>            
+       
+              <column value="#{ServiceName}" label="Service Name" configurationDataView="enabled" />   
+              <column value="#{Port}" label="Port" configurationDataView="enabled" />    
+              <column value="#{ServerType}" label="Server Type"/>
+              <column value="#{DatabaseType}" label="Database Type"/>
+       </configurationInstancesView>     
+
+       <configurationDataView name="DefaultLabelView" columnValue="#{Name}" value="TestConfigurationDataDefaultLabel">
+              <editAction label="Edit Action" />       
+           
+              <group name="GeneralInfo123" groupRef="ControlsDemo" label="" />
+       </configurationDataView>
+       
+       <configurationDataView name="DefaultView" label="Pre Install Configuration" columnValue="#{Name}" value="*">
+              <editAction label="Edit Action" />       
+           
+              <group name="GeneralInfo" groupRef="ControlsDemo" label="" />
+       </configurationDataView>   
+       
+</uiBinding>

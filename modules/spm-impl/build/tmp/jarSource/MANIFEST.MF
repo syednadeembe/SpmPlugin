@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: plm.spm.cloudExtention.impl.sources
+Bundle-SymbolicName: com.softwareag.plm.spm.cloudExtention.impl.source
+Implementation-Version: 10.2.0.0000-0002
+Bundle-Version: 10.2.0.0000-0002
+Bundle-ManifestVersion: 2
+Implementation-Vendor-Id: com.softwareag
+Bundle-Vendor: Software AG
+Eclipse-SourceBundle: com.softwareag.plm.spm.cloudExtention.impl;versi
+ on="10.2.0.0000-0002"
+Created-By: SAG Build Automation System
+Implementation-Vendor: Software AG
+

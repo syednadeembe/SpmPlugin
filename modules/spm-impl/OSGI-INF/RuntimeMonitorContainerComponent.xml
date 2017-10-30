@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.softwareag.platform.management.nirvana.monitoring.impl.RuntimeMonitorImpl">
+   <implementation class="com.softwareag.platform.management.productcode.mysql.runtime.RuntimeMonitorContainerImpl"/>
+   <property name="productId" type="String" value="cloudExtention"/>
+   <property name="runtimeComponentId" type="String" value="cloudExtention-process"/>
+   <service>
+      <provide interface="com.softwareag.platform.management.monitoring.spi.RuntimeMonitor"/>
+   </service>
+
+</scr:component>

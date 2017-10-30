@@ -1,0 +1,9 @@
+{
+    "iu": {
+        "type": "feature",
+        "id": "com.softwareag.plm.spm.cloudExtention.feature.feature.group",
+        "version": "10.2.0.0000-0002"
+    },
+    "name": "'Software AG SPM plugins' feature for spm-cloudExtention",
+    "summary": "'Software AG SPM plugins' feature for spm-cloudExtention"
+}

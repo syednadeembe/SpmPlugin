@@ -1,0 +1,8 @@
+def taskList                            = ['clean', 'build', 'integrationTest', 'processReports', 'artifactoryPublish']
+def finalTaskList                       = startParameter.taskNames - taskList + taskList - ['clean']
+startParameter.taskNames                = ['clean'] + finalTaskList
+def sppp                                = ['uploadCoinsReport':'true','uploadCoinsCoverageReport':'true']
+startParameter.projectProperties        += startParameter.systemPropertiesArgs.containsKey('bas.build.status') ? ['build.status':startParameter.systemPropertiesArgs['bas.build.status']] + sppp : sppp
+logger.lifecycle                        "Executing task sequence....$startParameter.taskNames"
+logger.lifecycle                        "Using project properties...$startParameter.projectProperties"
+logger.lifecycle                        "Using system properties....$startParameter.systemPropertiesArgs"

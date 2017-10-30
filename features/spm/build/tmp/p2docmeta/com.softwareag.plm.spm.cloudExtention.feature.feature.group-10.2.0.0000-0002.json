@@ -1,0 +1,29 @@
+{
+    "capabilities": [
+        {
+            "namespace": "org.eclipse.equinox.p2.iu",
+            "id": "com.softwareag.plm.spm.cloudExtention.feature.feature.group",
+            "version": "10.2.0.0000-0002"
+        }
+    ],
+    "requirements": [
+        {
+            "namespace": "org.eclipse.equinox.p2.iu",
+            "id": "com.softwareag.plm.spm.cloudExtention.impl",
+            "range": "[10.2.0.0000-0002,10.2.0.0000-0002]"
+        }
+    ],
+    "iu": {
+        "id": "com.softwareag.plm.spm.cloudExtention.feature.feature.group",
+        "version": "10.2.0.0000-0002",
+        "type": "feature"
+    },
+    "gav": {
+        "group": "com.softwareag.plm.spm.cloudExtention",
+        "name": "spm-cloudExtention",
+        "version": "10.2.0-v0002"
+    },
+    "name": "'Software AG SPM plugins' feature for spm-cloudExtention",
+    "summary": "'Software AG SPM plugins' feature for spm-cloudExtention",
+    "description": null
+}

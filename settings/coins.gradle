@@ -1,0 +1,13 @@
+/*
+ * Common COINS configurations
+ */
+apply plugin: 'bas-coins'
+
+coinsProjectName = 'SPM-Plugins'
+
+findbugsTest.enabled  = false
+pmdTest.enabled       = false
+checkstyleApi.enabled = false
+checkstyleMain.enabled  = false
+checkstyleTest.enabled  = false 
+

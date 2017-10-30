@@ -1,0 +1,9 @@
+{
+    "iu": {
+        "type": "feature",
+        "id": "com.softwareag.plm.spm.cloudExtention.dev.resources.feature.feature.group",
+        "version": "10.2.0.0000-0002"
+    },
+    "name": "Development Resources feature, not used in production",
+    "summary": "Development Resources feature, not used in production"
+}

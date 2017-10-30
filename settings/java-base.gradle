@@ -1,0 +1,8 @@
+/*
+ * Basic Java configuration
+ */
+apply plugin: 'java-base'
+
+// Set Java source and target compatibility
+sourceCompatibility = 1.7
+targetCompatibility = 1.7

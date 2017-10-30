@@ -1,0 +1,45 @@
+description = 'Top level features'
+/*
+ * Project domain specific configuration
+ */
+subprojects {
+	apply plugin: 'bas-equinox-p2' // Generate Equinox P2 repository
+	apply plugin: 'bas-eclipse-feature' // Generate Eclipse feature descriptor
+	apply plugin: 'bas-ac-equinox' // Add tasks equinoxAcInstall<ProfileName> to install the feature over the generated profile
+
+	generateP2 {
+		append = true
+	}
+	
+  label = "'$rootProject.description' feature for $project.name" 
+  description = project.label
+	
+}
+
+configure(productionFeatures()) {
+  dependencies {
+	 runtime (
+		  project(":modules:$project.name-impl"), // Convention: production feature has the same name as the production module but without the -impl suffix.
+	 )
+  }
+  rootProject.tasks.startSPM.dependsOn equinoxAcInstallSPM // Production features to be automatically included in the BAS SPM profile.
+}
+
+configure(nonProductionFeatures()) {
+  rootProject.tasks.equinoxAcLaunchConfigSPM.dependsOn equinoxAcInstallSPM // Non-Production features to be automatically included in the SPM Target Platform. 
+}
+
+
+
+def productionFeatures() {
+	subprojects.findAll { project -> isProductionFeature(project) }
+}
+
+def nonProductionFeatures() {
+	subprojects.findAll { project -> !isProductionFeature(project) }
+}
+
+def isProductionFeature(Project featureProject) {
+  String featureProjectName = featureProject.name
+  return !featureProjectName.contains("dev") && !featureProjectName.contains("test")
+}

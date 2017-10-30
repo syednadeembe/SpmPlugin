@@ -1,0 +1,8 @@
+<FindBugsFilter>
+<Match>
+<Class name="~^(?!.*softwareag.*).*$" />
+</Match>
+<Match>
+<Class name="~.*closure.*$" />
+</Match>
+</FindBugsFilter>

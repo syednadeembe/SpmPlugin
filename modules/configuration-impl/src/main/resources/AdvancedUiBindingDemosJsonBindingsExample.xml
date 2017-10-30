@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding>	
+	<groupDef name="ControlsDemo">		
+	    <!-- Typical TextBox control 
+	              - bound to #{NameOnEdit} ServerSide binding
+	              - required="OnEdit" - Will be required only during the edit of the configuration 
+	    -->
+		<property name="textBoxRequiredOnEditControlAdvanced" value="#{Name}" label="On Edit TextBox Control" required="OnEdit" type="TextBox" defaultValue="advancedDemoValue"/>
+			
+	  	<property name="CheckBoxGroupControlAdvanced" value="#{Enabled}" label="Enable DulListBox control" type="CheckBox" defaultValue="true"/>	  	
+	  	
+	  	<property name="navigationLinkParamControl" value="#{LinkParam}" label="Navigation Link Params Provider" type="TextBox" defaultValue="CCE"/>
+	  	
+	  	<property name="HyperLinkControlAdmin" label="Navigate To Admin Filtered" type="HyperLink" navigateTo="ADMINISTRATION:ALL/local/OSGI-SPM/OSGI-SPM/diagnostics" params="pluginInfoGrid.filter=${navigationLinkParamControl.value}"/>
+
+	  	<property name="HyperLinkControlAdminDetails" label="Navigate To Admin Details" type="HyperLink" navigateTo="ADMINISTRATION:ALL/local/OSGI-SPM/OSGI-SPM/diagnostics" params="pluginInfoGrid.edit=detailedInfo, pluginInfoGrid.edit.productId=${navigationLinkParamControl.value}, pluginInfoGrid.edit.bundleSymbolicName=com.softwareag.plm.spm.cce.impl"/>
+
+	  	<property name="HyperLinkControlConfig" label="Navigate To Config Resolved" type="HyperLink" paramsReplaceAllRegEx="/" paramsReplaceAllReplacement="-" navigateTo="CONFIGURATION:ALL/local/CC-SDKs-process/CC-SDKs-engine/DYNAMIC-UIBINDING-DEMOS-JSON" params="configurationInstancesView.edit.configurationInstanceId=${navigationLinkParamControl.value}"/>	 	
+	  		
+	    <!-- Typical DualListBoxControl control 
+	              - bound to #{Values} ServerSide binding	
+	              - enabled on condition 
+	    -->
+		
+		<property name="DualListBoxControl with CSV" value="#{StringBinding}" label="DuallistBox Control- CSV output" type="DualListBox" valueFormat="csv" enabled="OnCondition" enabledCondition="CheckBoxGroupControlAdvanced.value =='true'">
+			<selectItems>				
+				<selectItem value="staticSelection0" label="Static Selection0"/>
+				<selectItem value="staticSelection1" label="Static Selection1"/>
+				<selectItem value="staticSelection2" label="Static Selection2"/>
+				<selectItem value="staticSelection3" label="Static Selection3"/>
+				<selectList dynamic="true" type="configuration/instances" configurationTypeId="ADVANCED-UIBINDING-DEMOS-JSON" />								    
+			</selectItems>		
+		</property>
+		
+		<!-- TextArea control with fileUpload handling enabled: fileUploadEnabled="true"
+		         - a suitable 100% styling is available using: cssClass="metawidget-file-upload-textarea"  
+		-->		
+		<property name="fileUploadTextAreaControl" value="#{Description}" label="File load TextArea" type="TextArea" fileUploadEnabled="true"/>		
+		
+		<!-- Typical fileUpload control: using timestamp for uplaodFile name randomization 
+		-->				
+		<property name="configFileControl" value="#{ConfigFile}" label="Custom configuration file" type="FileUpload" enabled="OnCondition" enabledCondition="CheckBoxGroupControlAdvanced.value =='true'" serverFileLocation="tempDemo/customconfig-${timestamp}.xml" tooltip="Provide full path to custom configuration file"/>
+		
+		<!-- Typical fileUpload control: 
+				- using a concrete client file name - ${clientFileName}
+				- using another control value as part of the serverFileLocation
+		-->	
+		<property name="configFileClientControl" value="#{ConfigFileClient}" label="Config client file" type="FileUpload" serverFileLocation="tempDemo/${textBoxRequiredOnEditControlAdvanced.value}/${clientFileName}" tooltip="Provide full path to custom client configuration file" displayServerFileName="true"/>
+			
+	</groupDef>	
+	
+	<configurationInstancesView  forceConfigurationDataRefresh="true">
+		<createAction label="Create" >
+			<actionParameter name="Default" configurationDataViewName="DefaultView" label="SDKs item" />
+		</createAction>		
+		<deleteAction label="Delete" />
+		
+		
+		<column value="#{Enabled}" label="Lookup-label&amp;icon&amp;action" configurationDataView="enabled" width="30">
+			<lookupValues>
+				<lookupValue value="true" label="Enabled" icon="enabled.png" />
+				<lookupValue value="false" label="Disabled" icon="disabled.png" />
+			</lookupValues>
+		</column>
+		<column value="#{Enabled}" label="Lookup-label" width="30">
+			<lookupValues>
+				<lookupValue value="true" label="Yes" />
+				<lookupValue value="false" label="No" />
+			</lookupValues>
+		</column>	
+		<column value="#{Name}" label="Name" sort="enabled" configurationDataView="enabled" />
+		<column value="#{Description}" label="Description" sort="enabled" />
+		
+		<column value="#{NameNavigation}" label="To Admin Filter" width="60" navigateTo="ADMINISTRATION:ALL/local/OSGI-SPM/OSGI-SPM/diagnostics" params="pluginInfoGrid.filter=#{Name}" />
+
+		<column value="#{NameNavigation}" label="To Admin Details" width="60" navigateTo="ADMINISTRATION:ALL/local/OSGI-SPM/OSGI-SPM/diagnostics" params="pluginInfoGrid.edit=detailedInfo, pluginInfoGrid.edit.productId=#{Name}, pluginInfoGrid.edit.bundleSymbolicName=com.softwareag.plm.spm.cce.impl" />
+		
+		<column value="#{NameNavigation}" label="To Config Details" width="60" navigateTo="CONFIGURATION:ALL/local/CC-SDKs-process/CC-SDKs-engine/DYNAMIC-UIBINDING-DEMOS-JSON" params="configurationInstancesView.edit.configurationInstanceId=#{Name}" />			
+		
+	</configurationInstancesView>	
+	
+	<configurationDataView name="DefaultView" label="SDKs Advanced Configuration" columnValue="#{Name}" value="*">
+		<editAction label="Edit Action" />		
+	    
+		<group name="GeneralInfo" groupRef="ControlsDemo" label="GCUI Controls - Advanced demo" />
+	</configurationDataView>	
+</uiBinding>

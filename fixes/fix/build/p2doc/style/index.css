@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+#top {
+    position: relative;
+    color: #666666;
+    padding: 10px;
+    width: 100%;
+    margin: 0px;
+    border-bottom: 1px solid #cccccb;
+}
+#top .title {
+    cursor: pointer;
+}
+#top .title strong{
+    color: #0899cc;
+}
+#top .show-more {
+    margin: 0 auto;
+    font-style: italic;
+    display: inline-block;
+    margin-left: 10px;
+    color: #bababa;
+}
+#top .project-description {
+    margin: 10px;
+}
+
+#iuNavigation {
+    width: 40%;
+    height: 94vh;
+    float:left;
+}
+#iuList {
+    width: 100%;
+    height: 94vh;
+    border: 0px;
+}
+#iuPreview {
+    width: 60%;
+    height: 94vh;
+    float:left;
+}
+#iuOverview {
+    width: 100%;
+    height: 94vh;
+    border: 0px;
+    border-left: 1px solid #cccccb;
+}

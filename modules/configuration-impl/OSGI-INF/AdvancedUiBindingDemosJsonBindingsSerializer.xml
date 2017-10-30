@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="com.softwareag.platform.management.sdk.democases.configuration.impl.advanced.serializer">
+	<implementation
+		class="com.softwareag.platform.management.sdk.democases.configuration.impl.UiBindingDemosJsonBindingsSerializer" />
+	<property name="runtimeComponentId" type="String" value="CC-SDKs-engine" />
+	<property name="configurationTypeId" type="String" value="ADVANCED-UIBINDING-DEMOS-JSON" />
+	<service>
+		<provide
+			interface="com.softwareag.platform.management.common.configuration.ConfigurationSerializer" />
+	</service>
+</scr:component>

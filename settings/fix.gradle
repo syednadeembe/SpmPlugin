@@ -1,0 +1,4 @@
+/*
+ * Common configuration for Fix projects
+ */
+apply plugin: 'bas-fix'

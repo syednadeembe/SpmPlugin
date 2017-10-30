@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding>	
+	<groupDef name="General">
+		<property name="status" value="#{Enabled}" label="Enabled" enabled="Never" required="false" type="RadioButtonGroup" defaultValue="true">
+			<selectItems>
+				<selectItem value="true" name="clusterEnabled" label="Yes" />
+				<selectItem value="false" name="clusterDisabled"  label="No"/>
+			</selectItems>	
+		</property>	
+
+		<property name="ServersTable" value="#{Servers.Server}" label="Mirror Groups and Servers" type="Table" required="true" enabled="OnCondition" enabledCondition ="status.value  == 'true'">
+			
+			<column value="@name" label="Server Name" type="TextBox" maxLength="255"/>
+			<column value="#{ExtendedProperties.Property[@name=mirrorGroup].$}" label="Mirror Group" type="TextBox" maxLength="255"/>
+			<column value="URL" label="Server URL" type="TextBox" required="true" maxLength="255" width="300"/>
+		</property>		
+	</groupDef>
+	
+	<groupDef name="Extended">
+		<property name="restartable" value="#{ExtendedProperties.Property[@name=Restartable].$}" label="Restartable" enabled="Never" required="false" type="RadioButtonGroup" defaultValue="false">
+			<selectItems>
+				<selectItem value="true" name="restartableEnabled" label="Yes" />
+				<selectItem value="false" name="restartableDisabled"  label="No"/>
+			</selectItems>	
+		</property>	
+		<property name="garbageCollection" value="#{ExtendedProperties.Property[@name=GarbageCollection].$}" label="Garbage Collection" enabled="Never" required="false" type="RadioButtonGroup" defaultValue="false">
+      <selectItems>
+        <selectItem value="true" name="garbageCollectionEnabled" label="Yes" />
+        <selectItem value="false" name="garbageCollectionDisabled"  label="No"/>
+      </selectItems>  
+    </property>
+    <property name="verboseGarbageCollection" value="#{ExtendedProperties.Property[@name=VerboseGarbageCollection].$}" label="Verbose Garbage Collection" enabled="Never" required="false" type="RadioButtonGroup" defaultValue="false">
+      <selectItems>
+        <selectItem value="true" name="verboseGarbageCollectionEnabled" label="Yes" />
+        <selectItem value="false" name="verboseGarbageCollectionDisabled"  label="No"/>
+      </selectItems>  
+    </property>
+    <property name="garbageCollectionInterval" value="#{ExtendedProperties.Property[@name=GarbageCollectionInterval].$}" required="false" label="Garbage Collection Interval" enabled="Never" type="TextBox" maxLength="255"  />
+    
+    <property name="updateCheck" value="#{ExtendedProperties.Property[@name=UpdateCheck].$}" label="Update Check" enabled="Never" required="false" type="RadioButtonGroup" defaultValue="false">
+      <selectItems>
+        <selectItem value="true" name="updateCheckEnabled" label="Yes" />
+        <selectItem value="false" name="updateCheckDisabled"  label="No"/>
+      </selectItems>  
+    </property>
+    <property name="clientReconnectWindow" value="#{ExtendedProperties.Property[@name=ClientReconnectWindow].$}" required="false" label="Client Reconnect Window" enabled="Never" type="TextBox" maxLength="255"  />
+    
+	</groupDef>
+	<configurationInstancesView >
+		
+	
+		<column value="#{Enabled}" label="Enabled" width="10">
+			<lookupValues>
+				<lookupValue value="true" icon="enabled.png" />
+				<lookupValue value="false" icon="disabled.png" />
+			</lookupValues>
+		</column>
+		<column value="#{Name}" label="Name" configurationDataView="enabled" />
+		
+	</configurationInstancesView>	
+	
+	<configurationDataView name="DefaultClusterView" columnValue="#{Name}" value="*">
+			    
+		<group name="GeneralInfo" groupRef="General" label="General Information" />
+		
+		<group name="Extended" groupRef="Extended" label="Extended Configuration" />
+		
+	</configurationDataView>
+
+	
+</uiBinding>

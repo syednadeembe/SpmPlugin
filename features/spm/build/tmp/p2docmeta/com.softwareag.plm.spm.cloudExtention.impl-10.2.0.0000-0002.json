@@ -1,0 +1,115 @@
+{
+    "capabilities": [
+        {
+            "namespace": "org.eclipse.equinox.p2.iu",
+            "id": "com.softwareag.plm.spm.cloudExtention.impl",
+            "version": "10.2.0.0000-0002"
+        },
+        {
+            "namespace": "osgi.bundle",
+            "id": "com.softwareag.plm.spm.cloudExtention.impl",
+            "version": "10.2.0.0000-0002"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.productcode",
+            "version": "10.1.0"
+        }
+    ],
+    "requirements": [
+        {
+            "namespace": "osgi.bundle",
+            "id": "org.junit",
+            "range": "4.8.1",
+            "optional": true
+        },
+        {
+            "namespace": "osgi.bundle",
+            "id": "org.mockito.mockito-all",
+            "range": "1.8.5",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.inventory.spi",
+            "range": "[1.1.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.configuration.spi",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.lifecycleoperations.spi",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.instance.spi",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.diagnostics.logretrieval",
+            "range": "[1.1.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.diagnostics.logretrieval.spi",
+            "range": "[1.1.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.monitoring.spi",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.management.core.jmx",
+            "range": "[1.0.0,2.0.0)"
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.platform.logging.init",
+            "range": "[0.0.0,1.0.0)",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.webmethods.sc",
+            "range": "[10.0.0,11.0.0)",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.apache.log4j",
+            "range": "[1.2.0,2.0.0)",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "org.apache.commons.io",
+            "range": "0.0.0",
+            "optional": true
+        },
+        {
+            "namespace": "java.package",
+            "id": "com.softwareag.g11n.util",
+            "range": "[10.1.0,11.0.0)",
+            "optional": true
+        }
+    ],
+    "iu": {
+        "id": "com.softwareag.plm.spm.cloudExtention.impl",
+        "version": "10.2.0.0000-0002",
+        "type": "bundle"
+    },
+    "gav": {
+        "group": "com.softwareag.plm.spm.cloudExtention",
+        "name": "spm-cloudExtention-impl",
+        "version": "10.2.0-v0002"
+    },
+    "name": "cloudExtention spm-cloudExtention-impl module",
+    "summary": "cloudExtention spm-cloudExtention-impl module"
+}

@@ -1,0 +1,43 @@
+description = 'SPM Plugin Fix module'
+
+dependencies {
+	fix (
+		project(":modules:spm-$rootProject.name-impl")
+	)
+}
+
+											// TODO: don't forget to add/change build.patch in the <root>/gradle.properties file with each new fix release e.g. build.patch=1 for fix 1, build.patch=2 for fix 2, etc
+def PLUGIN_GA_VERSION = "9.12.0.0000-0123"	// TODO: specify the GA version (released version) of the plugin binaries located under <install.dir>/common/runtime/bundles
+def PLUGIN_PROP_FILE_NAME = "TBD"			// TODO: specify the plugin .prop file name located under <install.dir>/install/products. NOTE: this prop file name should be added as "know" in the SUM core, too (contatct SUM team for that).
+def PLUGIN_P2_REPO_NAME = "tbd"				// TODO: specify the plugin p2 repo name located under <install.dir>/common/runtime/bundles
+
+createFix.doLast {							// TODO: remove this closure after all of the above TODO comments are handled
+	throw new GradleException("The fix is ready, have a look under " + buildDir + "! However, please take care for the TODO comments in " + projectDir + "/build.gradle. Once you handle them, remove this line from the script.");
+}
+
+fix { 
+    fixName = "wMFix." + rootProject.name.toUpperCase() + "SPMPlugin"
+    baseVersion = PLUGIN_GA_VERSION;
+      
+    readme{
+      location = new File(projectDir, "README.txt")
+    }
+     
+    manifest {
+      requireProduct = "wMProduct." + PLUGIN_PROP_FILE_NAME + ";version=" + build.version
+      requireSumBuild = "8.2.1.0041-1593"
+      displayGroupName = "Infrastructure.Platform Manager Plug-ins"
+      displayFixName =  rootProject.name.toUpperCase() + " Platform Manager Plug-in " + build.version + " FIX " + build.patch
+    }
+  
+    repository {
+  	 repo = 'QARepo';
+    }
+    
+    instructions {
+      osgi{
+        profiles = ["SPM"]
+        p2RepoName = PLUGIN_P2_REPO_NAME
+      }
+    }  
+ } 

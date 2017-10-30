@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding> 
+  <!-- Basic information properties, apply to all pools independently of type -->
+  <groupDef name="BasicsDef">
+    <property name="serverName" value="#{serverName}" label="Server Name" required="true" type="TextBox" maxLength="255" regExp="[A-Za-z\d\-_\.]+" /> 
+  </groupDef>
+  
+  <configurationInstancesView >
+    
+    <column value="#{serverName}" label="Server Name" configurationDataView="enabled" />
+        
+  </configurationInstancesView> 
+  
+  <configurationDataView name="DefaultClusterView" columnValue="#{serverName}" value="*">
+    <editAction label="edit" />   
+      
+    <group name="GeneralInfo" groupRef="BasicsDef" label="Basic" />
+    
+  </configurationDataView>
+
+  
+</uiBinding>

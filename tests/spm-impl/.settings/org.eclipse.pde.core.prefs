@@ -1,0 +1,6 @@
+#
+#Wed Oct 18 13:06:29 IST 2017
+BUNDLE_ROOT_PATH=build/tmp/bundle
+eclipse.preferences.version=1
+resolve.requirebundle=false
+pluginProject.extensions=false

@@ -1,0 +1,4 @@
+[submodule "gradle"]
+	path = gradle
+	url = http://irepo.eur.ad.sag/scm/ibit/gradle.git
+	branch = master

@@ -1,0 +1,10 @@
+/*
+ * Common configurations for L10N projects
+ */
+apply plugin: 'bas-l10n'
+
+l10n {
+	databaseUrl = "http://daeg11n1.eur.ad.sag/tamino/Vmsg-dae2"
+	product = "SPM"
+	locales = "noLocale"
+}

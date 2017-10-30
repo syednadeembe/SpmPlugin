@@ -1,0 +1,18 @@
+/*
+ * Common configuration for Java projects
+ */
+apply plugin: 'bas-java'
+apply from: "$project.rootDir/settings/java-base.gradle"
+apply from: "$project.rootDir/settings/coins.gradle"
+
+// Setting compiler arguments
+tasks.withType(AbstractCompile) {
+    options.encoding = 'utf-8'
+    options.compilerArgs = ['-implicit:none', '-Xlint:-options', '-Xlint:unchecked']
+}
+
+// Generating Eclipse workspace files for JDT projects
+apply from: "$project.rootDir/settings/ide-eclipse.gradle"
+
+// Generating IDEA workspace files
+apply from: "$project.rootDir/settings/ide-idea.gradle"

@@ -1,0 +1,9 @@
+description = 'Fix modules'
+dependencyReport.enabled = false;
+/*
+ * Fix projects specific configuration
+ */
+subprojects {
+  apply from: "$project.rootDir/settings/fix.gradle"
+
+}

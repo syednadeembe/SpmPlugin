@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uiBinding>	
+	<!-- Basic information properties, apply to all pools independently of type -->
+	<groupDef name="BasicsDef">
+		<property name="enabled" value="#{Port.Enabled}" label="Enabled" enabled="Never" type="RadioButtonGroup" defaultValue="true" >
+			<selectItems>
+				<selectItem value="false" label="No"/>
+				<selectItem value="true " label="Yes"/>
+			</selectItems>
+		</property>
+		<property name="alias" value="#{Port.@alias}" label="Alias" required="true" type="TextBox" maxLength="255" regExp="[A-Za-z\d\-_\.]+" enabled="OnCreate" /> 
+		<property name="protocol" value="#{Port.Protocol}" label="Protocol" required="true" type="TextBox" defaultValue="TCP" maxLength="255" regExp="[\d]+" enabled="OnCreate" />
+		<property name="portNumber" value="#{Port.Number}" label="Port Number" required="true" type="TextBox" maxLength="5" regExp="[\d]+" />
+		<property name="bindAddress" value="#{Port.BindAddress}" label="Bind Address" required="false" type="TextBox" maxLength="255" regExp="^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$" />
+	</groupDef>
+	
+	<configurationInstancesView >
+		<column value="#{Port.Enabled}" label="Enabled" width="20">
+			<lookupValues>
+				<lookupValue value="true" icon="enabled.png" />
+				<lookupValue value="false" icon="disabled.png" />
+			</lookupValues>
+		</column>
+		<column value="#{Port.@alias}" label="Alias" configurationDataView="enabled" />
+		<column value="#{Port.Number}" label="Port" />
+		<column value="#{Port.Protocol}" label="Protocol" />
+		<column value="#{Port.Type}" label="Type" />
+		
+	</configurationInstancesView>	
+	
+	<configurationDataView name="DefaultClusterView" columnValue="#{Port.@alias}" value="*">		
+	    
+		<group name="GeneralInfo" groupRef="BasicsDef" label="Basic" />
+		
+	</configurationDataView>
+
+	
+</uiBinding>

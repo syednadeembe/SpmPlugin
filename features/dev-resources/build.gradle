@@ -1,0 +1,8 @@
+label = 'Development Resources feature, not used in production'
+description = 'Development Resources feature, not used in production'
+
+dependencies {
+	 runtime (
+		 project.modules.mockito
+	 )
+}

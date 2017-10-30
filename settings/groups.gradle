@@ -1,0 +1,17 @@
+/*
+ * Software AG group ids :: See https://iwiki.eur.ad.sag/x/lYKLAQ
+ */
+configure(allprojects - cmpProjects()) {
+	group = "com.softwareag.plm.spm.cloudExtention"
+}
+// Common configurations for CMP projects
+configure(cmpProjects()) {
+	group = "com.softwareag.cmp.layered"
+}
+
+/*
+ * Helper methods
+ */
+def cmpProjects() {
+	subprojects.findAll { project -> project.name.startsWith('cmp') }
+}

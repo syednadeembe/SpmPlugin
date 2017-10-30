@@ -1,0 +1,1 @@
+**Documentation available under** https://iwiki.eur.ad.sag/display/RNDWMBPMS/SPM+Common+Plugins+repository+and+Gradle+build
