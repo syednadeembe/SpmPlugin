@@ -4,4 +4,10 @@ body {
 }
 p {
     color: #323232;
+}body {
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+p {
+    color: #323232;
 }

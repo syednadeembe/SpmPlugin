@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
-   <implementation class="com.softwareag.platform.management.productcode.mysql.impl.BasicLifecycleImpl"/>
-   <service>
-      <provide interface="com.softwareag.platform.management.lifecycleoperations.spi.LifecycleOperations"/>
-   </service>
-   <property name="productId" type="String" value="cloudExtention"/>
-   <property name="runtimeComponentId" type="String" value="cloudExtention-MySql"/>
-</scr:component>
